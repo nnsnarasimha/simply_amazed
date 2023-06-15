@@ -8,7 +8,7 @@ pipeline {
                 doGenerateSubmoduleConfigurations: false,
                 extensions: [[$class: 'CleanCheckout']],
                 submoduleCfg: [], 
-                userRemoteConfigs: [[url: 'https://github.com/nnsnarasimha/websitedeployment.git']]])
+                userRemoteConfigs: [[url: 'https://github.com/nnsnarasimha/simply_amazed.git']]])
               sh "ls -ltr"
           }
         }
@@ -17,7 +17,7 @@ pipeline {
                 sh 'sudo rm -rf /var/www/html/*'
                 sh 'sudo rm -rf /var/www/html/.git'
                 sh 'sudo systemctl start httpd'
-                sh 'sudo git clone https://github.com/nnsnarasimha/websites.git /var/www/html'
+                sh 'sudo git clone https://github.com/nnsnarasimha/simply_amazed.git /var/www/html'
             }
         }
         stage('QA'){
@@ -25,7 +25,7 @@ pipeline {
                 sh 'sudo rm -rf /var/www/html/*'
                 sh 'sudo rm -rf /var/www/html/.git'
                 sh 'sudo systemctl start httpd'
-                sh 'sudo git clone https://github.com/nnsnarasimha/websites.git /var/www/html'
+                sh 'sudo git clone https://github.com/nnsnarasimha/simply_amazed.git /var/www/html'
             }
         }
         stage('Production'){
@@ -33,7 +33,7 @@ pipeline {
                 sh 'sudo rm -rf /var/www/html/*'
                 sh 'sudo rm -rf /var/www/html/.git'
                 sh 'sudo systemctl start httpd'
-                sh 'sudo git clone https://github.com/nnsnarasimha/websites.git /var/www/html'
+                sh 'sudo git clone https://github.com/nnsnarasimha/simply_amazed.git /var/www/html'
              }
         }        
     }
