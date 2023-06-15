@@ -14,10 +14,10 @@ pipeline {
         }
         stage('Development'){
             steps {
-                sh 'sudo rm -rf /var/www/html/*'
-                sh 'sudo rm -rf /var/www/html/.git'
+                sh 'sudo rm -rf /var/www/html/dev/*'
+                sh 'sudo rm -rf /var/www/html/dev/.git'
                 sh 'sudo systemctl start httpd'
-                sh 'sudo git clone https://github.com/nnsnarasimha/simply_amazed.git /var/www/html'
+                sh 'sudo git clone https://github.com/nnsnarasimha/simply_amazed.git /var/www/html/dev'
             }
         }
         stage('QA'){
